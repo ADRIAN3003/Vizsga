@@ -52,7 +52,7 @@ namespace Vizsga
             int sikeres = 0;
             foreach (var tanulo in tanulok)
             {
-                if (tanulo.Erdemjegy() != "elégtelen")
+                if (tanulo.sikeres)
                 {
                     sikeres++;
                 }
