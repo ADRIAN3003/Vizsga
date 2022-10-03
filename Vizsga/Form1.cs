@@ -18,9 +18,15 @@ namespace Vizsga
         public Form1()
         {
             InitializeComponent();
+            Beolvasas();
+            tbBeolvasas.Text = tanulok.Count + " vizsgázó adatait beolvastuk";
+            foreach (var tanulo in tanulok)
+            {
+                lboxAdatok.Items.Add(tanulo.Nev);
+            }
         }
 
-        private void Form1_Shown(object sender, EventArgs e)
+        private void Beolvasas()
         {
             using (StreamReader sr = new StreamReader("adatok.txt"))
             {
@@ -28,13 +34,6 @@ namespace Vizsga
                 {
                     tanulok.Add(new Tanulok(sr.ReadLine()));
                 }
-            }
-
-            tbBeolvasas.Text = tanulok.Count + " vizsgázó adatait beolvastuk";
-
-            foreach (var tanulo in tanulok)
-            {
-                lboxAdatok.Items.Add(tanulo.Nev);
             }
         }
 

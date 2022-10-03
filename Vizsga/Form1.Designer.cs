@@ -148,7 +148,6 @@ namespace Vizsga
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rendszerüzemeltető vizsga";
-            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
