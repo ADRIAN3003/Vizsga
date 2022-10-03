@@ -72,6 +72,31 @@ namespace Vizsga
                     }
                 }
             }
+
+            MessageBox.Show("Fájlba írás megtörtént!");
+        }
+
+        private void btnKereses_Click(object sender, EventArgs e)
+        {
+            Tanulok talalat = null;
+            bool van = false;
+
+            foreach (var tanulo in tanulok)
+            {
+                if (tanulo.Nev.ToLower().Contains(tbKeresett.Text.ToLower()))
+                {
+                    van = true;
+                    talalat = tanulo;
+                }
+            }
+            if (van)
+            {
+                lbAdatok.Text = talalat.ToString();
+            }
+            else
+            {
+                lbAdatok.Text = "A keresett tanuló nem található a listában!";
+            }
         }
     }
 }

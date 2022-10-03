@@ -114,6 +114,7 @@ namespace Vizsga
             this.btnKereses.TabIndex = 2;
             this.btnKereses.Text = "Keresés";
             this.btnKereses.UseVisualStyleBackColor = true;
+            this.btnKereses.Click += new System.EventHandler(this.btnKereses_Click);
             // 
             // lbAdatok
             // 

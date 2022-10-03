@@ -34,6 +34,10 @@ namespace Vizsga
 
         public double Atlag { get; set; }
 
+        public double Legjobb { get; set; }
+
+        public double Leggyengebb { get; set; }
+
         public Tanulok(string sor)
         {
             string[] tmp = sor.Split(';');
@@ -50,6 +54,8 @@ namespace Vizsga
                 }
             }
             Atlag = Math.Round(Eredmenyek.Average(), 2) * 100;
+            Legjobb = Math.Round(Eredmenyek.Max(), 2) * 100;
+            Leggyengebb = Math.Round(Eredmenyek.Min(), 2) * 100;
         }
 
         public string Erdemjegy()
@@ -80,6 +86,20 @@ namespace Vizsga
                 vissza = "elégtelen";
             }
             return vissza;
+        }
+
+        public override string ToString()
+        {
+            string kiiras = $"Tanuló neve: {Nev}\nLegjobb eredménye: {Legjobb}%\nLeggyengébb eredménye: {Leggyengebb}%\n";
+            if (sikeres)
+            {
+                kiiras += "Sikeres vizsgát tett";
+            }
+            else
+            {
+                kiiras += "Sikertelen vizsgát tett";
+            }
+            return kiiras;
         }
     }
 }
