@@ -52,9 +52,25 @@ namespace Vizsga
         public string Erdemjegy()
         {
             string vissza = "";
-            if (Sikeres)
+            if (sikeres)
             {
                 double atlag = eredmenyek.Average();
+                if (atlag >= 0.81)
+                {
+                    vissza = "jeles";
+                }
+                else if (atlag >= 0.71)
+                {
+                    vissza = "jó";
+                }
+                else if (atlag >= 0.61)
+                {
+                    vissza = "közepes";
+                }
+                else
+                {
+                    vissza = "elégséges";
+                }
             }
             else
             {

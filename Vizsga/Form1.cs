@@ -57,7 +57,7 @@ namespace Vizsga
             {
                 foreach (var tanulo in tanulok)
                 {
-                    sw.WriteLine(tanulo.Nev + "\t\t" + Convert.ToInt32(tanulo.Eredmenyek.Average()));
+                    sw.WriteLine(tanulo.Nev + "\t\t");
                 }
             }
         }
