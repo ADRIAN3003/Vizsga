@@ -32,6 +32,8 @@ namespace Vizsga
             set { sikeres = value; }
         }
 
+        public double Atlag { get; set; }
+
         public Tanulok(string sor)
         {
             string[] tmp = sor.Split(';');
@@ -47,6 +49,7 @@ namespace Vizsga
                     sikeres = false;
                 }
             }
+            Atlag = Math.Round(Eredmenyek.Average(), 2) * 100;
         }
 
         public string Erdemjegy()

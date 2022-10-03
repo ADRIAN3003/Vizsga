@@ -66,7 +66,10 @@ namespace Vizsga
             {
                 foreach (var tanulo in tanulok)
                 {
-                    sw.WriteLine(tanulo.Nev + "\t\t");
+                    if (tanulo.sikeres)
+                    {
+                        sw.WriteLine(tanulo.Nev + "\t\t" + tanulo.Atlag + "\t\t" + tanulo.Erdemjegy());
+                    }
                 }
             }
         }
