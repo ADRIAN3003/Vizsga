@@ -38,6 +38,7 @@ namespace Vizsga
             this.tbKeresett = new System.Windows.Forms.TextBox();
             this.btnKereses = new System.Windows.Forms.Button();
             this.lbAdatok = new System.Windows.Forms.Label();
+            this.ofdMegnyitas = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // tbBeolvasas
@@ -68,6 +69,7 @@ namespace Vizsga
             this.btnSikeres.TabIndex = 2;
             this.btnSikeres.Text = "Sikeres vizsgát tett";
             this.btnSikeres.UseVisualStyleBackColor = true;
+            this.btnSikeres.Click += new System.EventHandler(this.btnSikeres_Click);
             // 
             // lbFo
             // 
@@ -86,6 +88,7 @@ namespace Vizsga
             this.btnAllomanybaIras.TabIndex = 2;
             this.btnAllomanybaIras.Text = "Eredmények állományba írása";
             this.btnAllomanybaIras.UseVisualStyleBackColor = true;
+            this.btnAllomanybaIras.Click += new System.EventHandler(this.btnAllomanybaIras_Click);
             // 
             // lbKeresett
             // 
@@ -121,6 +124,10 @@ namespace Vizsga
             this.lbAdatok.TabIndex = 5;
             this.lbAdatok.Text = "Tanuló adatai";
             // 
+            // ofdMegnyitas
+            // 
+            this.ofdMegnyitas.Filter = "Adafájl|*.txt";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -141,6 +148,7 @@ namespace Vizsga
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rendszerüzemeltető vizsga";
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +165,7 @@ namespace Vizsga
         private System.Windows.Forms.TextBox tbKeresett;
         private System.Windows.Forms.Button btnKereses;
         private System.Windows.Forms.Label lbAdatok;
+        private System.Windows.Forms.OpenFileDialog ofdMegnyitas;
     }
 }
 
