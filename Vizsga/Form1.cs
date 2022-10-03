@@ -19,11 +19,21 @@ namespace Vizsga
         {
             InitializeComponent();
             Beolvasas();
-            tbBeolvasas.Text = tanulok.Count + " vizsgázó adatait beolvastuk";
+            DarabszamKiiras();
+            NevekFeltoltese();
+        }
+
+        private void NevekFeltoltese()
+        {
             foreach (var tanulo in tanulok)
             {
                 lboxAdatok.Items.Add(tanulo.Nev);
             }
+        }
+
+        private void DarabszamKiiras()
+        {
+            tbBeolvasas.Text = tanulok.Count + " vizsgázó adatait beolvastuk";
         }
 
         private void Beolvasas()
